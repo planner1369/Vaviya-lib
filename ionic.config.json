@@ -1,0 +1,7 @@
+{
+  "name": "vaniya-lib",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
