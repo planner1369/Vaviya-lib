@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title slot="end">{{title}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home"></ion-back-button>
+      </ion-buttons>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="ion-no-padding" [fixed]="true">
+    <ion-row>
+      <ion-col class="background">
+        <div class="container">
+          <div *ngFor="let i of items" class="stories">
+            <div class="story-list">
+              <img [src]="i.src" alt="stories">
+            </div>
+            <div>{{i.title}}</div>
+          </div>
+
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

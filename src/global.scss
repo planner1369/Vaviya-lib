@@ -24,3 +24,11 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+@import "assets/font/IRANSans/WebFonts/css/fontiran.css";
+//@import '~ngx-toastr/toastr';
+//@import '~ngx-toastr/toastr-bs4-alert';
+//@import '~ngx-toastr/toastr-bs4-alert';
+* {
+  font-family: IRANSans, Kalameh-Regular, sans-serif;
+  letter-spacing: 0 !important;
+}

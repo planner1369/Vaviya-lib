@@ -1,0 +1,74 @@
+.background {
+  width: 100%;
+  height: 95vh;
+  background-image: url('../../../src/assets/images/home.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-y: auto;
+  padding: 15px;
+
+  .container {
+    background-color: #B0D0D3;
+    border-radius: 10px;
+    opacity: .9;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+
+    .stories {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px;
+      font-size: 10px;
+      text-align: center;
+
+      .story-list {
+        position: relative;
+        width: 100%;
+        border-radius: 6px;
+
+        img {
+          border-radius: 6px;
+        }
+      }
+    }
+
+    .story-list:before, .story-list:after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      background: linear-gradient(45deg, #8ed6ff, #5e87b8, #83cee0, #a4fbe3);
+      background-size: 400%;
+      width: calc(100% + 4px);
+      height: calc(100% + -4px);
+      z-index: -1;
+      animation: steam 40s linear infinite;
+      border-radius: 6px;
+    }
+
+    @keyframes steam {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 400% 0;
+      }
+      100% {
+        background-position: 0 0;
+      }
+    }
+
+    .story-list:after {
+      filter: blur(1px);
+    }
+  }
+}
+
+
