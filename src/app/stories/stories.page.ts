@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 export interface Stories {
   title: string,
-  src: string
+  src: string,
+  id: number,
 }
 
 @Component({
@@ -15,7 +16,10 @@ export class StoriesPage implements OnInit {
   public title: string = ""
   public items: Array<Stories> = [];
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    ) {
   }
 
   ngOnInit() {
@@ -43,9 +47,13 @@ export class StoriesPage implements OnInit {
 
   getItems() {
     this.items = [
-      {title: 'کتاب کودک ۱', src: "assets/images/home.jpg"},
-      {title: 'کتاب کودک ۱', src: "assets/images/home.jpg"},
-      {title: 'کتاب کودک ۱', src: "assets/images/home.jpg"},
+      {title: 'زیبای خفته', src: "../../assets/images/type-1/1/Untitled-1.jpg", id: 1},
+      {title: 'کتاب کودک ۱', src: "assets/images/home.jpg", id: 2},
+      {title: 'کتاب کودک ۱', src: "assets/images/home.jpg", id: 3},
     ]
+  }
+
+  goToStory(id: number) {
+    this.router.navigate([`stories/${id}`]).then();
   }
 }

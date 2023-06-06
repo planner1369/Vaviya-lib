@@ -14,13 +14,12 @@
     <ion-row>
       <ion-col class="background">
         <div class="container">
-          <div *ngFor="let i of items" class="stories">
+          <div *ngFor="let i of items" class="stories" (click)="goToStory(i.id)">
             <div class="story-list">
               <img [src]="i.src" alt="stories">
             </div>
             <div>{{i.title}}</div>
           </div>
-
         </div>
       </ion-col>
     </ion-row>
