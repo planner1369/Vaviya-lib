@@ -8,12 +8,12 @@ import {storiesModel} from "../stories";
   providedIn: 'root'
 })
 export class StoryDataService {
-  data: storiesModel[] = storyData
+  data: any = storyData
 
   constructor() {
   }
 
   getStory(): Observable<any> {
-    return of(this.data)
+    return of(this.data.body)
   }
 }

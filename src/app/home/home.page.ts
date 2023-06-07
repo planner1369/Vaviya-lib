@@ -14,7 +14,7 @@ export class HomePage implements OnInit {
   ngOnInit() {
   }
 
-  goTo(to: string, params?: number) {
-    this.router.navigate([to], {queryParams: [params]}).then();
+  goTo(to: string, id?: number) {
+    this.router.navigate([`${to}/${id}`]).then();
   }
 }

@@ -6,7 +6,7 @@ export interface storiesModel {
 }
 
 export class Stories {
-  data: storiesModel[] = [
+  data: any =
     {
       id: 1,
       title: "زیبای خفته",
@@ -61,5 +61,4 @@ export class Stories {
         "سپس عروسی شاهزاده و شاهزاده خانم با شکوه تمام برگزار شد و اونا تا آخر عمر به خوبی و خوشی زندگی کردن!",
       src: "../../assets/images/type-1/1/Untitled-1.jpg"
     }
-  ]
 }

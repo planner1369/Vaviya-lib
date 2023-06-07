@@ -1,11 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {storiesModel} from "../shared/stories";
+import {StoryDataService} from "../shared/services/story-data.service";
 
-export interface Stories {
-  title: string,
-  src: string,
-  id: number,
-}
 
 @Component({
   selector: 'app-stories',
@@ -14,46 +11,46 @@ export interface Stories {
 })
 export class StoriesPage implements OnInit {
   public title: string = ""
-  public items: Array<Stories> = [];
+  public items: storiesModel[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    ) {
+    private StoryDataService: StoryDataService
+  ) {
   }
 
   ngOnInit() {
-    this.getItems();
-    this.activatedRoute.queryParams.subscribe(res => {
-      switch (+res[0]) {
-        case 1:
+    this.activatedRoute.params.subscribe(res => {
+      switch (res['id']) {
+        case "1":
           this.title = 'قصه‌های قدیمی خارجی';
           break;
-        case 2:
+        case "2":
           this.title = 'قصه‌های قدیمی ایرانی';
           break;
-        case 3:
+        case "3":
           this.title = 'قصه‌های جدید خارجی';
           break;
-        case 4:
+        case "4":
           this.title = 'قصه‌های مصور';
           break;
         default:
           this.title = 'قصه‌های کودک'
       }
     });
-
+    this.getItems();
   }
 
   getItems() {
-    this.items = [
-      {title: 'زیبای خفته', src: "../../assets/images/type-1/1/Untitled-1.jpg", id: 1},
-      {title: 'کتاب کودک ۱', src: "assets/images/home.jpg", id: 2},
-      {title: 'کتاب کودک ۱', src: "assets/images/home.jpg", id: 3},
-    ]
+    this.StoryDataService.getStory().subscribe(res => {
+      console.log(res);
+      this.items = res;
+    })
+
   }
 
   goToStory(id: number) {
-    this.router.navigate([`stories/${id}`]).then();
+    this.router.navigate([`/story`], {queryParams: {storyId: id},}).then();
   }
 }

@@ -1,9 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="danger">
-    <ion-title slot="end">story</ion-title>
+    <ion-title slot="end">{{story?.title}}</ion-title>
     <ion-buttons slot="start">
       <ion-buttons slot="start">
-        <ion-back-button defaultHref="/stories"></ion-back-button>
+        <ion-back-button defaultHref="/"></ion-back-button>
       </ion-buttons>
     </ion-buttons>
   </ion-toolbar>
@@ -14,12 +14,12 @@
     <ion-row>
       <ion-col class="background">
         <div class="container">
-          <div class="title">{{story[0].title}}</div>
+          <div class="title">{{story?.title}}</div>
           <div class="image">
-            <img [src]="story[0].src" alt="">
+            <img [src]="story?.src" alt="">
           </div>
           <div class="body">
-            {{story[0].body}}
+            {{story?.body}}
           </div>
         </div>
       </ion-col>
