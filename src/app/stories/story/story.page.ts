@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StoryDataService} from "../../shared/services/story-data.service";
+import {storiesModel} from "../../shared/stories";
 
 @Component({
   selector: 'app-story',
@@ -7,7 +8,7 @@ import {StoryDataService} from "../../shared/services/story-data.service";
   styleUrls: ['./story.page.scss'],
 })
 export class StoryPage implements OnInit {
-  public story: any[] = []
+  public story: storiesModel[] = []
 
   constructor(private StoryDataService: StoryDataService) {
   }
@@ -18,7 +19,7 @@ export class StoryPage implements OnInit {
 
   getStoryData() {
     this.StoryDataService.getStory().subscribe(res => {
-      console.log(res);
+      this.story = res;
     })
   }
 }

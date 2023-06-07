@@ -1,15 +1,19 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
+import * as storyData from "../mainStory.json"
+import {storiesModel} from "../stories";
 
 @Injectable({
   providedIn: 'root'
 })
 export class StoryDataService {
+  data: storiesModel[] = storyData
 
-  constructor(private http: HttpClient) { }
+  constructor() {
+  }
 
   getStory(): Observable<any> {
-    return this.http.get<any>(`mainStory.json`);
+    return of(this.data)
   }
 }
