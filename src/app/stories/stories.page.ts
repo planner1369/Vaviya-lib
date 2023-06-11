@@ -10,7 +10,8 @@ import {StoryDataService} from "../shared/services/story-data.service";
   styleUrls: ['./stories.page.scss'],
 })
 export class StoriesPage implements OnInit {
-  public title: string = ""
+  public title: string = "";
+  public typeId: string = "";
   public items: storiesModel[] = [];
 
   constructor(
@@ -22,6 +23,7 @@ export class StoriesPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(res => {
+      this.typeId = res['id']
       switch (res['id']) {
         case "1":
           this.title = 'قصه‌های قدیمی';
@@ -57,6 +59,6 @@ export class StoriesPage implements OnInit {
   }
 
   goToStory(id: number) {
-    this.router.navigate([`/story`], {queryParams: {storyId: id},}).then();
+    this.router.navigate([`/story`], {queryParams: {storyId: id, typeId: this.typeId},}).then();
   }
 }

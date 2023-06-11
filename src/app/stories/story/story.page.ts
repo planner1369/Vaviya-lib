@@ -16,12 +16,27 @@ export class StoryPage implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(res => {
-      this.getStoryData(+res['storyId']);
+      switch (res['typeId']) {
+        case "1":
+          this.getStoryData(+res['storyId']);
+          break;
+        case "2":
+          this.getStoryDataForSleep(+res['storyId']);
+          break;
+        default:
+          this.getStoryData(+res['storyId']);
+      }
     });
   }
 
   getStoryData(storyId: number) {
     this.StoryDataService.getStory().subscribe(res => {
+      this.story = res.find((element: any) => element.id == storyId);
+    })
+  }
+
+  getStoryDataForSleep(storyId: number) {
+    this.StoryDataService.getStoryForSleep().subscribe(res => {
       this.story = res.find((element: any) => element.id == storyId);
     })
   }
