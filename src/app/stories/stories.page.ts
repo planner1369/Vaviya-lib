@@ -35,9 +35,11 @@ export class StoriesPage implements OnInit {
           break;
         case "3":
           this.title = 'قصه‌هایی برای نی نی‌ها';
+          this.getItemsForBaby();
           break;
         case "4":
           this.title = 'قصه‌های انگلیسی ساده';
+          this.getItemsForEnglish();
           break;
         default:
           this.title = 'قصه‌های کودک'
@@ -53,7 +55,18 @@ export class StoriesPage implements OnInit {
 
   getItemsForSleep() {
     this.StoryDataService.getStoryForSleep().subscribe(res => {
-      console.log(res);
+      this.items = res;
+    })
+  }
+
+  getItemsForBaby() {
+    this.StoryDataService.getStoryForBaby().subscribe(res => {
+      this.items = res;
+    })
+  }
+
+  getItemsForEnglish() {
+    this.StoryDataService.getStoryForEnglish().subscribe(res => {
       this.items = res;
     })
   }

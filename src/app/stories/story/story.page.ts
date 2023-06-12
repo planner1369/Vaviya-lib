@@ -23,6 +23,12 @@ export class StoryPage implements OnInit {
         case "2":
           this.getStoryDataForSleep(+res['storyId']);
           break;
+        case "3":
+          this.getStoryDataForBaby(+res['storyId']);
+          break;
+        case "4":
+          this.getStoryDataForEnglish(+res['storyId']);
+          break;
         default:
           this.getStoryData(+res['storyId']);
       }
@@ -37,6 +43,18 @@ export class StoryPage implements OnInit {
 
   getStoryDataForSleep(storyId: number) {
     this.StoryDataService.getStoryForSleep().subscribe(res => {
+      this.story = res.find((element: any) => element.id == storyId);
+    })
+  }
+
+  getStoryDataForBaby(storyId: number) {
+    this.StoryDataService.getStoryForBaby().subscribe(res => {
+      this.story = res.find((element: any) => element.id == storyId);
+    })
+  }
+
+  getStoryDataForEnglish(storyId: number) {
+    this.StoryDataService.getStoryForEnglish().subscribe(res => {
       this.story = res.find((element: any) => element.id == storyId);
     })
   }
