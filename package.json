@@ -1,7 +1,7 @@
 {
   "name": "vaniya-lib",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Mohammad Hosseini Parto",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "@capacitor/android": "5.0.4",
     "@capacitor/app": "5.0.2",
     "@capacitor/core": "5.0.4",
     "@capacitor/haptics": "5.0.2",
@@ -40,7 +41,6 @@
     "@angular-eslint/schematics": "^16.0.0",
     "@angular-eslint/template-parser": "^16.0.0",
     "@angular/cli": "^16.0.0",
-    "@angular/compiler": "^16.0.0",
     "@angular/compiler-cli": "^16.0.0",
     "@angular/language-service": "^16.0.0",
     "@capacitor/cli": "5.0.4",

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">کتابخانه وانیا</string>
+    <string name="title_activity_main">کتابخانه وانیا</string>
+    <string name="package_name">ir.waniya.lib</string>
+    <string name="custom_url_scheme">ir.waniya.lib</string>
+</resources>

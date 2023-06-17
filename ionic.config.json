@@ -1,7 +1,9 @@
 {
   "name": "vaniya-lib",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "CAPACITOR_ANDROID_STUDIO_PATH": "/home/mohammadhosseiniparto/Downloads/android-studio/bin/studio.sh"
+    }
   },
   "type": "angular"
 }
